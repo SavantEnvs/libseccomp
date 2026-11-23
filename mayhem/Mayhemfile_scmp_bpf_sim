@@ -1,0 +1,8 @@
+project: savantenvs/libseccomp
+target: scmp_bpf_sim
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/scmp_bpf_sim/testsuite
+cmds:
+  - cmd: /mayhem/scmp_bpf_sim -a x86_64 -s 59 -0 1 -f @@
+    afl: true
